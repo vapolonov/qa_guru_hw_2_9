@@ -1,8 +1,12 @@
+import allure
 from Models import controls
 from Models import pages
 from selene.support.conditions import have
 
+@allure.title("Successful fill form")
 def test_demo_qa_form(open_and_close_form):
+
+    with allure.step("fill form")
     pages.fill_fullname("Andrew", "Vasutenko")
     pages.fill_user_email("qqqqq@qqqq.qq")
     controls.select_gender_male()
@@ -15,6 +19,7 @@ def test_demo_qa_form(open_and_close_form):
     controls.select_state_and_city("rajasthan", "jaipur")
     controls.submit()
 
+    with allure.step("check result")
     pages.table_result.should(have.text("Andrew"))
     pages.table_result.should(have.text("Vasutenko"))
     pages.table_result.should(have.text("qqqqq@qqqq.qq"))
