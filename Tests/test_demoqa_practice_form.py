@@ -1,14 +1,10 @@
 import allure
-from selene.support.shared import browser
 from Models import controls
 from Models import pages
 from selene.support.conditions import have
 
 @allure.title("Successful fill form")
-def test_demo_qa_form(setup_browser):
-
-    with allure.step("open practise-form"):
-        browser.open("https://demoqa.com/automation-practice-form")
+def test_demo_qa_form(open_and_close_form):
 
     with allure.step("fill form"):
         pages.fill_fullname("Andrew", "Vasutenko")
@@ -29,12 +25,10 @@ def test_demo_qa_form(setup_browser):
         pages.table_result.should(have.text("qqqqq@qqqq.qq"))
         pages.table_result.should(have.text("Male"))
         pages.table_result.should(have.text("8800555353"))
-        pages.table_result.should(have.text("29 November,2022"))
+        pages.table_result.should(have.text("19 April,1993"))
         pages.table_result.should(have.text("Arts, Commerce"))
         pages.table_result.should(have.text("Music"))
         pages.table_result.should(have.text("meme.jpg"))
         pages.table_result.should(have.text("Russia,Moscow"))
         pages.table_result.should(have.text("Rajasthan"))
         pages.table_result.should(have.text("Jaipur"))
-        browser.element("#closeLargeModal").double_click()
-        browser.close()
