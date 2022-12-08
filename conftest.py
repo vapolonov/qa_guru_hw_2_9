@@ -1,10 +1,9 @@
-import attach
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
 import os
-
+from utils import attach
 from dotenv import load_dotenv
 
 DEFAULT_BROWSER_VERSION = "100.0"
