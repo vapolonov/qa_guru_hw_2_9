@@ -38,4 +38,3 @@ def test_demo_qa_form():
         pages.table_result.should(have.text("Jaipur"))
         browser.element("#closeLargeModal").double_click()
         browser.close()
-
