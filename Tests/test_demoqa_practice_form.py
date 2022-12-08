@@ -5,7 +5,7 @@ from Models import pages
 from selene.support.conditions import have
 
 @allure.title("Successful fill form")
-def test_demo_qa_form(setup_browser):
+def test_demo_qa_form():
 
     with allure.step("start demoqa"):
         browser.open("https://demoqa.com/automation-practice-form")
