@@ -1,8 +1,8 @@
 import allure
 from selene import command
 from selene.support.shared import browser
-from Models import controls
-from Models import pages
+from models import pages
+from models import controls
 from selene.support.conditions import have
 
 
