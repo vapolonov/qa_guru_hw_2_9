@@ -1,14 +1,14 @@
-from selene.support.shared import browser
 import pytest
+from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from utils import attach
+import utils.attach
 
 
 @pytest.fixture(scope='function', autouse=True)
 def setup_browser():
-    browser.config.window_height = 1500
-    browser.config.window_width = 1800
+    browser.config.window_height = 1080
+    browser.config.window_width = 1920
 
     options = Options()
     selenoid_capabilities = {
@@ -29,8 +29,8 @@ def setup_browser():
 
     yield
 
-    attach.add_html(browser)
-    attach.add_screenshot(browser)
-    attach.add_logs(browser)
-    attach.add_video(browser)
+    utils.attach.add_html(browser)
+    utils.attach.add_screenshot(browser)
+    utils.attach.add_logs(browser)
+    utils.attach.add_video(browser)
     browser.quit()
